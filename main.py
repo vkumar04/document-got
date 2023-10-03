@@ -8,7 +8,7 @@ from langchain_functions import (
 
 
 def disable():
-    st.session_state["disabled"] = True
+    st.session_state["disabled"] = False
 
 
 def handle_userinput(user_question):
@@ -31,7 +31,7 @@ def main():
     if "chat_history" not in st.session_state:
         st.session_state.chat_history = None
     if "disabled" not in st.session_state:
-        st.session_state["disabled"] = False
+        st.session_state["disabled"] = True
 
     st.set_page_config(page_title="Chat with Documents", page_icon=":books:")
     st.header("Chat with your Documents")
