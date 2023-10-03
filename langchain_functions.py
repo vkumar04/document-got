@@ -30,8 +30,8 @@ def get_pdf_chunks(text):
 
 
 def get_vector_store(chunks):
-    # embeddings = OpenAIEmbeddings()
-    embeddings = HuggingFaceInstructEmbeddings(model_name="hkunlp/instructor-xl")
+    embeddings = OpenAIEmbeddings()
+    # embeddings = HuggingFaceInstructEmbeddings(model_name="hkunlp/instructor-xl")
     store = FAISS.from_texts(texts=chunks, embedding=embeddings)
     return store
 
